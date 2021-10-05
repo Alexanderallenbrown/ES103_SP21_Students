@@ -10,9 +10,9 @@
 
 <style type="text/css">
     pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14268,10 +14268,10 @@ a.anchor-link {
 <h1 id="Challenge">Challenge<a class="anchor-link" href="#Challenge">&#182;</a></h1><p>In this challenge, you will be building a model of a <em>galvanometer,</em> which is an instrument used to measure voltages and other quantities that can be <em>represented</em> by voltages. Here is a video of how a galvanometer is constructed and how it works.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%html</span>
@@ -14281,6 +14281,28 @@ a.anchor-link {
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<iframe width="900" height="540" src="https://www.youtube.com/embed/_kLvQpKuyWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14362,10 +14384,10 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
 <h2 id="Deliverable:-Evaluate-your-model-for-correctness">Deliverable: Evaluate your model for correctness<a class="anchor-link" href="#Deliverable:-Evaluate-your-model-for-correctness">&#182;</a></h2><p>Below, develop aan Euler integration code that simulates galvanometer angle $\theta$ for a 5-volt constant input $V_s$. Compare your simulation with data to evaluate your model. The data columns are time in seconds and needle angle <strong>in degrees</strong>.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">% YOUR CODE HERE</span>
@@ -14375,6 +14397,27 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>error: No Answer Given!
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14384,10 +14427,10 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
 <p><strong>DO NOT change the steady-state ratio of voltage to needle angle!</strong> Satisfying this requirement may require you to calculate the theoretical steady-state needle angle as a function of input voltage. you can include this calculation in your discussion.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">% YOUR CODE HERE</span>
@@ -14397,6 +14440,27 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>error: No Answer Given!
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>

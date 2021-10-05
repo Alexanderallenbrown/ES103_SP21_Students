@@ -10,9 +10,9 @@
 
 <style type="text/css">
     pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14744,23 +14744,48 @@ $$v_y (t) = v_{y0} + a_y t$$$$y(t) = y_0 + v_{y0} t + \frac{1}{2} a_y t^2$$
 <p>You can plot the data in MATLAB quite easily, as shown in the cell below.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mf">0.5</span> <span class="mi">1</span> <span class="mf">1.5</span> <span class="mi">2</span> <span class="mf">2.5</span> <span class="mi">3</span> <span class="mf">3.5</span> <span class="mi">4</span> <span class="mf">4.5</span> <span class="mi">5</span> <span class="mf">5.5</span> <span class="mi">6</span>  <span class="mf">6.5</span> <span class="mi">7</span> <span class="mf">7.5</span> <span class="mi">8</span><span class="p">]</span><span class="s1">&#39;; %the &#39;</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">means</span> <span class="s1">&#39;transpose,&#39;</span> <span class="ow">or</span> <span class="n">turn</span> <span class="n">rows</span> <span class="n">into</span> <span class="n">columns</span><span class="o">.</span> <span class="n">Makes</span> <span class="n">this</span> <span class="n">a</span> <span class="s2">&quot;tall&quot;</span> <span class="n">array</span><span class="o">.</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">10</span> <span class="mf">10.09</span> <span class="mf">10.264</span> <span class="mf">10.442</span> <span class="mf">10.594</span> <span class="mf">10.713</span> <span class="mf">10.801</span> <span class="mf">10.864</span> <span class="mf">10.908</span> <span class="mf">10.939</span> <span class="mf">10.96</span> <span class="mf">10.973</span> <span class="mf">10.983</span> <span class="mf">10.989</span> <span class="mf">10.993</span> <span class="mf">10.995</span> <span class="mf">10.997</span><span class="p">]</span><span class="s1">&#39;; </span><span class="si">%s</span><span class="s1">ee comment above.</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mf">0.5</span> <span class="mi">1</span> <span class="mf">1.5</span> <span class="mi">2</span> <span class="mf">2.5</span> <span class="mi">3</span> <span class="mf">3.5</span> <span class="mi">4</span> <span class="mf">4.5</span> <span class="mi">5</span> <span class="mf">5.5</span> <span class="mi">6</span>  <span class="mf">6.5</span> <span class="mi">7</span> <span class="mf">7.5</span> <span class="mi">8</span><span class="p">]</span><span class="o">&#39;</span><span class="p">;</span> <span class="c">%the &#39; at the end means &#39;transpose,&#39; or turn rows into columns. Makes this a &quot;tall&quot; array.</span>
+<span class="n">y</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">10</span> <span class="mf">10.09</span> <span class="mf">10.264</span> <span class="mf">10.442</span> <span class="mf">10.594</span> <span class="mf">10.713</span> <span class="mf">10.801</span> <span class="mf">10.864</span> <span class="mf">10.908</span> <span class="mf">10.939</span> <span class="mf">10.96</span> <span class="mf">10.973</span> <span class="mf">10.983</span> <span class="mf">10.989</span> <span class="mf">10.993</span> <span class="mf">10.995</span> <span class="mf">10.997</span><span class="p">]</span><span class="o">&#39;</span><span class="p">;</span> <span class="c">%see comment above.</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;kx-&#39;</span><span class="p">,</span><span class="s1">&#39;linewidth&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;kx-&#39;</span><span class="p">,</span><span class="s">&#39;linewidth&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14865,19 +14890,41 @@ $$\frac{dy(t)}{dt}|_{t=a} = \lim_{h \rightarrow 0} \frac{y(a+h)-y(a)}{h}$$<p>Thi
 <p>Importantly, this equation looks like a <em>slope</em> or "rise/run" equation. Using the interactive plot below, watch how this slope's accuracy changes as the value of $h$, or the time-difference between the two points used to calculate the derivative, gets larger or smaller. If the cell below shows up blank, click on it and hit Shift+Enter.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span>
-<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;900&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;540&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://workbench.lafayette.edu/~brownaa/derivplot/derivplot.html&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span>  <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%%html</span>
+<span class="o">&lt;</span><span class="n">iframe</span> <span class="n">width</span><span class="p">=</span><span class="s">&quot;900&quot;</span> <span class="n">height</span><span class="p">=</span><span class="s">&quot;540&quot;</span> <span class="n">src</span><span class="p">=</span><span class="s">&quot;https://workbench.lafayette.edu/~brownaa/derivplot/derivplot.html&quot;</span> <span class="n">frameborder</span><span class="p">=</span><span class="s">&quot;0&quot;</span>  <span class="n">allowfullscreen</span><span class="o">&gt;&lt;/</span><span class="n">iframe</span><span class="o">&gt;</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<iframe width="900" height="540" src="https://workbench.lafayette.edu/~brownaa/derivplot/derivplot.html" frameborder="0"  allowfullscreen></iframe>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14908,34 +14955,83 @@ $$\left. \frac{d}{dt} y(t)\right|_{t=t(k)} \approx \frac{y(k)-y(k-1)}{t(k)-t(k-1
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In MATLAB/Octave, a "for loop" can be used to perform repetitive calculations easily. The syntax looks like this:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-    <span class="p">(</span><span class="n">operations</span> <span class="n">to</span> <span class="n">be</span> <span class="n">repeated</span> <span class="mi">10</span> <span class="n">times</span> <span class="n">go</span> <span class="n">here</span><span class="p">)</span>
-<span class="k">end</span>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="n">operations</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">repeated</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="n">go</span><span class="w"> </span><span class="n">here</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 <p>the index <code>k</code> begins at 1. Then, whatever operations you need to perform go between the "for" and the "end" lines. Once the loop hits the "end" line, it goes back to the top of the "for" loop and increases <code>k</code> by 1. It does this until <code>k=10</code>. Then, the loop completes for the last time. Let's look at an example, in which we use a for-loop to create an array where each entry is equal to 2*k.</p>
 <p>The output <code>a(k)</code> in the code below is unsuppressed, so you can see how the code "builds" the array <code>a</code> one column at a time. If you suppress that line using a semicolon, you will not have to see all of the "intermediate" actions of the code.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">initialize</span> <span class="n">the</span> <span class="n">array</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">%</span> <span class="n">this</span> <span class="n">creates</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">zeros</span><span class="p">,</span> <span class="k">with</span> <span class="n">dimensions</span> <span class="mi">1</span> <span class="n">row</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">columns</span><span class="o">.</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% initialize the array</span>
+<span class="n">a</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="c">% this creates an array of all zeros, with dimensions 1 row by 1 columns.</span>
 
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">length</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">%</span> <span class="n">notice</span> <span class="n">length</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">here</span><span class="o">.</span> <span class="n">This</span> <span class="n">automatically</span> <span class="n">sees</span> <span class="n">how</span> <span class="n">many</span> <span class="n">times</span> <span class="n">the</span> <span class="n">loop</span> <span class="n">should</span> <span class="n">run</span> <span class="p">(</span><span class="mi">5</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">case</span><span class="p">)</span>
-    <span class="o">%</span><span class="k">print</span> k so we can see what it is
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c">% notice length(a) here. This automatically sees how many times the loop should run (5 in this case)</span>
+    <span class="c">%print k so we can see what it is</span>
     <span class="n">k</span>
-    <span class="o">%</span><span class="k">fill</span> in this entry in a
-    <span class="n">a</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span>
-<span class="n">end</span>
+    <span class="c">%fill in this entry in a</span>
+    <span class="n">a</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">k</span>
+<span class="k">end</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>a =
+
+   0   0   0   0   0
+
+k =  1
+a =
+
+   2   0   0   0   0
+
+k =  2
+a =
+
+   2   4   0   0   0
+
+k =  3
+a =
+
+   2   4   6   0   0
+
+k =  4
+a =
+
+   2   4   6   8   0
+
+k =  5
+a =
+
+    2    4    6    8   10
+
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -15022,41 +15118,66 @@ $$\frac{dy}{dt} = f(y)$$</p>
 <p>An example of how to implement approximate Euler integration in MATLAB/Octave is shown below. The approximate integral is compared with the "true" integral of the function to show its accuracy. Try changing the timestep $T$ in the code cell below to see how accuracy is affected by the size of the time step used for extrapolation/integration. A large value of $T$ is problematic for the same reason large extrapolations were problematic in Reading 4.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">;</span> <span class="o">%</span><span class="k">timestep</span>
-<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="n">T</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span> <span class="o">%</span><span class="k">time</span> vector
-<span class="n">y</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">);</span> <span class="o">%</span><span class="k">function</span> we wish to integrate. This may come from data rather than a known function of t.
+<div class=" highlight hl-octave"><pre><span></span><span class="n">T</span> <span class="p">=</span> <span class="mf">0.01</span><span class="p">;</span> <span class="c">%timestep</span>
+<span class="n">t</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span><span class="n">T</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span> <span class="c">%time vector</span>
+<span class="n">y</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">);</span> <span class="c">%function we wish to integrate. This may come from data rather than a known function of t.</span>
 
-<span class="n">Y_estimate</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span> <span class="o">%</span><span class="k">initialize</span> an array to hold our estimates for Y, the integral of y.
-<span class="n">Y0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">%</span><span class="k">some</span> initial, known value for the integral at the beginning.
-<span class="n">Y_estimate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">Y0</span><span class="p">;</span> <span class="o">%</span><span class="k">place</span> this value in the first entry of our array
+<span class="n">Y_estimate</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span> <span class="c">%initialize an array to hold our estimates for Y, the integral of y.</span>
+<span class="n">Y0</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c">%some initial, known value for the integral at the beginning.</span>
+<span class="n">Y_estimate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">Y0</span><span class="p">;</span> <span class="c">%place this value in the first entry of our array</span>
 
-<span class="n">Y_true</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">);</span> <span class="o">%</span><span class="k">for</span> this example, we know that d/dt(sin(t)) = cos(t). 
-<span class="o">%</span><span class="k">We</span> will use this &quot;exact&quot; solution to the integral to allow us to see how accurate Euler integration is.
+<span class="n">Y_true</span> <span class="p">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">);</span> <span class="c">%for this example, we know that d/dt(sin(t)) = cos(t). </span>
+<span class="c">%We will use this &quot;exact&quot; solution to the integral to allow us to see how accurate Euler integration is.</span>
 
-<span class="o">%</span><span class="k">now</span> set up a for-loop starting at the second entry in Y_estimate, since we already know Y_estimate(1)=Y0
-<span class="k">for</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">:</span><span class="n">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">%</span><span class="k">automatically</span> set up the for-loop to be the right length
-    <span class="o">%</span><span class="k">now</span> implement Euler&#39;s formula. remember that here, y is dY/dt.
-    <span class="n">Y_estimate</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">Y_estimate</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">t</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
-<span class="n">end</span>
+<span class="c">%now set up a for-loop starting at the second entry in Y_estimate, since we already know Y_estimate(1)=Y0</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c">%automatically set up the for-loop to be the right length</span>
+    <span class="c">%now implement Euler&#39;s formula. remember that here, y is dY/dt.</span>
+    <span class="n">Y_estimate</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">Y_estimate</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">t</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+<span class="k">end</span>
 
-<span class="o">%</span><span class="k">now</span> we will compare our approximate integral with our &quot;true&quot; value to see if Euler integration works.
+<span class="c">%now we will compare our approximate integral with our &quot;true&quot; value to see if Euler integration works.</span>
 
-<span class="n">figure</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Y_true</span><span class="p">,</span><span class="s1">&#39;k.&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">Y_estimate</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y(t)&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="s1">&#39;Forward Euler Integration&#39;</span><span class="p">)</span>
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Y_true</span><span class="p">,</span><span class="s">&#39;k.&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">Y_estimate</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Y(t)&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;true&#39;</span><span class="p">,</span><span class="s">&#39;Forward Euler Integration&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -15076,39 +15197,77 @@ $$\frac{dy}{dt} = f(y)$$</p>
 <p>MATLAB/Octave can be used to estimate a "best fit" polynomial function to match a dataset. The term "best fit," in this context, means that the sum of the squared error between the model and the data is minimized. The command used to produce the set of coefficients is "polyfit." An example of how to use the "polyfit" command to produce the best-fit line for a dataset is shown below.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">first</span><span class="p">,</span> <span class="n">create</span> <span class="n">some</span> <span class="n">fake</span> <span class="s2">&quot;data&quot;</span> <span class="n">we</span> <span class="n">will</span> <span class="n">fit</span> <span class="n">a</span> <span class="n">line</span> <span class="n">to</span><span class="p">,</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">see</span> <span class="n">how</span> <span class="s2">&quot;polyfit&quot;</span> <span class="n">works</span><span class="o">.</span>
-<span class="n">xfakedata</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="o">.</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span>
-<span class="n">yfakedata</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">xfakedata</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">xfakedata</span><span class="p">));</span> <span class="o">%</span><span class="k">the</span> randn() on the end produces some random &quot;noise&quot; on our fake data.
-<span class="o">%</span><span class="k">this</span> simulates the effect of having error in our measurements. If polyfit does its job, we should get the line y = -3x+4 back!
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% first, create some fake &quot;data&quot; we will fit a line to, in order to see how &quot;polyfit&quot; works.</span>
+<span class="n">xfakedata</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:.</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">yfakedata</span> <span class="p">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">xfakedata</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="p">.</span><span class="mi">5</span><span class="o">*</span><span class="nb">randn</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">xfakedata</span><span class="p">));</span> <span class="c">%the randn() on the end produces some random &quot;noise&quot; on our fake data.</span>
+<span class="c">%this simulates the effect of having error in our measurements. If polyfit does its job, we should get the line y = -3x+4 back!</span>
 
-<span class="o">%</span><span class="k">now</span> we will actually use polyfit. The array &quot;coefficients&quot; will contain [m b] in the equation y = m*x+b.
-<span class="o">%</span><span class="k">the</span> second argument to the polyfit() function is the ORDER of the polynomial. A line is a polynomial of order 1. 
-<span class="o">%</span><span class="k">for</span> reference, a quadratic is a polynomial of order 2.
-<span class="n">coefficients</span> <span class="o">=</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">xfakedata</span><span class="p">,</span><span class="n">yfakedata</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> 
-<span class="o">%</span><span class="k">was</span> m=-3 and b=4?
-<span class="n">m_estimate</span> <span class="o">=</span> <span class="n">coefficients</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">b_estimate</span> <span class="o">=</span> <span class="n">coefficients</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">%now we will actually use polyfit. The array &quot;coefficients&quot; will contain [m b] in the equation y = m*x+b.</span>
+<span class="c">%the second argument to the polyfit() function is the ORDER of the polynomial. A line is a polynomial of order 1. </span>
+<span class="c">%for reference, a quadratic is a polynomial of order 2.</span>
+<span class="n">coefficients</span> <span class="p">=</span> <span class="nb">polyfit</span><span class="p">(</span><span class="n">xfakedata</span><span class="p">,</span><span class="n">yfakedata</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> 
+<span class="c">%was m=-3 and b=4?</span>
+<span class="n">m_estimate</span> <span class="p">=</span> <span class="n">coefficients</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b_estimate</span> <span class="p">=</span> <span class="n">coefficients</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="o">%</span><span class="k">now</span>, these coefficients fully define a &quot;model&quot; of our relationship y = m*x+b. Let&#39;s produce predictions based on this model
-<span class="n">ymodel</span> <span class="o">=</span> <span class="n">m_estimate</span><span class="o">*</span><span class="n">xfakedata</span> <span class="o">+</span> <span class="n">b_estimate</span><span class="p">;</span>
+<span class="c">%now, these coefficients fully define a &quot;model&quot; of our relationship y = m*x+b. Let&#39;s produce predictions based on this model</span>
+<span class="n">ymodel</span> <span class="p">=</span> <span class="n">m_estimate</span><span class="o">*</span><span class="n">xfakedata</span> <span class="o">+</span> <span class="n">b_estimate</span><span class="p">;</span>
 
-<span class="o">%</span><span class="k">now</span> plot the data and the model together to evaluate.
-<span class="n">figure</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xfakedata</span><span class="p">,</span><span class="n">yfakedata</span><span class="p">,</span><span class="s1">&#39;ks&#39;</span><span class="p">,</span><span class="n">xfakedata</span><span class="p">,</span><span class="n">ymodel</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;model&#39;</span><span class="p">)</span>
+<span class="c">%now plot the data and the model together to evaluate.</span>
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">xfakedata</span><span class="p">,</span><span class="n">yfakedata</span><span class="p">,</span><span class="s">&#39;ks&#39;</span><span class="p">,</span><span class="n">xfakedata</span><span class="p">,</span><span class="n">ymodel</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;data&#39;</span><span class="p">,</span><span class="s">&#39;model&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>m_estimate = -2.9818
+b_estimate =  3.9538
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -16118,25 +16277,47 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
 <p>Octave, which is the open-source version of MATLAB, can be used as a simple calculator. Operations are performed one line at at time. See the "cell" below, which defines two variables, adds their values on one line, and then multiplies them on the next. More information about basic arithmetic operations can be found at <a href="https://www.mathworks.com/help/matlab/arithmetic-operators.html">this link</a>. To "run" or execute the code in this cell, select it, and then hit Shift+Enter (Hold Shift, then hold Enter as well).</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">a</span> <span class="n">comment</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">executed</span><span class="p">,</span> <span class="ow">is</span> <span class="n">noted</span> <span class="n">by</span> <span class="n">a</span> <span class="o">%.</span> <span class="n">In</span> <span class="n">Jupyter</span><span class="p">,</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">this</span> <span class="o">%</span> <span class="ow">is</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
-<span class="o">%</span> <span class="n">use</span> <span class="n">comments</span> <span class="n">to</span> <span class="n">tell</span> <span class="n">the</span> <span class="n">reader</span> <span class="n">what</span> <span class="n">we</span> <span class="n">are</span> <span class="n">doing</span><span class="o">.</span> <span class="n">First</span><span class="p">,</span> <span class="n">we</span> <span class="s2">&quot;define&quot;</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">to</span> <span class="n">be</span> <span class="n">the</span> <span class="n">number</span> <span class="mf">2.</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="o">%</span> <span class="n">the</span> <span class="n">semicolon</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="n">line</span> <span class="n">means</span> <span class="s2">&quot;don&#39;t show me this when you execute the code.&quot;</span>
-<span class="o">%</span> <span class="n">now</span><span class="p">,</span> <span class="n">we</span> <span class="n">will</span> <span class="n">define</span> <span class="n">a</span> <span class="n">second</span> <span class="n">variable</span><span class="o">.</span> <span class="n">Variable</span> <span class="n">names</span> <span class="n">should</span> <span class="n">be</span> <span class="n">descriptive</span> <span class="n">when</span> <span class="n">possible</span><span class="o">.</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">3.02</span><span class="p">;</span>
-<span class="o">%</span> <span class="n">now</span> <span class="n">we</span> <span class="n">will</span> <span class="n">add</span> <span class="n">them</span> <span class="n">together</span><span class="o">.</span> 
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="o">%</span> <span class="n">note</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">semicolon</span><span class="p">,</span> <span class="n">which</span> <span class="n">means</span> <span class="n">the</span> <span class="n">code</span> <span class="n">will</span> <span class="s2">&quot;Show&quot;</span> <span class="n">us</span> <span class="n">the</span> <span class="n">result</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="o">%</span><span class="k">same</span> here. When you run this cell, think about what you expect to see!
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% a comment, which is not executed, is noted by a %. In Jupyter, make sure this % is followed by a space.</span>
+<span class="c">% use comments to tell the reader what we are doing. First, we &quot;define&quot; a variable a to be the number 2.</span>
+<span class="n">a</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c">% the semicolon at the end of the line means &quot;don&#39;t show me this when you execute the code.&quot;</span>
+<span class="c">% now, we will define a second variable. Variable names should be descriptive when possible.</span>
+<span class="n">b</span> <span class="p">=</span> <span class="mf">3.02</span><span class="p">;</span>
+<span class="c">% now we will add them together. </span>
+<span class="n">c</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="c">% note there is no semicolon, which means the code will &quot;Show&quot; us the result</span>
+<span class="n">d</span> <span class="p">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="c">%same here. When you run this cell, think about what you expect to see!</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>c =  5.0200
+d =  6.0400
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -16147,28 +16328,72 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
 <p>If you have trouble understanding what is happening in the cell below, I suggest you visit both of these links.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">let</span><span class="s1">&#39;s create a matrix (an array) of numbers. One column will represent time, and the other will represent &quot;f,&quot; which we have computed as some function of time.</span>
-<span class="o">%</span> <span class="n">arrays</span> <span class="n">are</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">row</span><span class="o">.</span> <span class="n">a</span> <span class="n">semicolon</span> <span class="n">inside</span> <span class="n">the</span> <span class="n">definition</span> <span class="n">of</span> <span class="n">the</span> <span class="n">array</span><span class="p">,</span> <span class="n">which</span> <span class="n">begins</span> <span class="ow">and</span> <span class="n">ends</span> <span class="k">with</span> <span class="p">[],</span> <span class="n">means</span> <span class="s2">&quot;create a new row&quot;</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span>  <span class="mi">10</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">11</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">10</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">9</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">]</span> <span class="o">%</span><span class="k">no</span> semicolon at the end... we should see this one when we execute.
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% let&#39;s create a matrix (an array) of numbers. One column will represent time, and the other will represent &quot;f,&quot; which we have computed as some function of time.</span>
+<span class="c">% arrays are defined by row. a semicolon inside the definition of the array, which begins and ends with [], means &quot;create a new row&quot;</span>
+<span class="n">data</span> <span class="p">=</span> <span class="p">[</span> <span class="mi">1</span>  <span class="mi">10</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">11</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">10</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">9</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">]</span> <span class="c">%no semicolon at the end... we should see this one when we execute.</span>
 
-<span class="o">%</span> <span class="n">let</span><span class="s1">&#39;s subtract 1 second from all of the times in &#39;</span><span class="n">data</span><span class="o">.</span><span class="s1">&#39; We can access the &quot;times&quot; in our data, or the first column only, as follows:</span>
-<span class="n">data</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="o">%</span><span class="k">notice</span> that we have UPDATED all values in the first column of the array. the colon : in data(:,1) represents &quot;all rows&quot; in the &quot;first column&quot;
+<span class="c">% let&#39;s subtract 1 second from all of the times in &#39;data.&#39; We can access the &quot;times&quot; in our data, or the first column only, as follows:</span>
+<span class="n">data</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="c">%notice that we have UPDATED all values in the first column of the array. the colon : in data(:,1) represents &quot;all rows&quot; in the &quot;first column&quot;</span>
 
-<span class="o">%</span> <span class="n">Now</span><span class="p">,</span> <span class="n">let</span><span class="s1">&#39;s say we need to convert the units of column 2 from meters to centimeters. We could do this by multiplying all elements in the second column by 100.</span>
-<span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="c">% Now, let&#39;s say we need to convert the units of column 2 from meters to centimeters. We could do this by multiplying all elements in the second column by 100.</span>
+<span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
 
-<span class="o">%</span><span class="k">when</span> you run this cell, you will see &quot;Data&quot; printed three times, with the updates we made as we made them.
+<span class="c">%when you run this cell, you will see &quot;Data&quot; printed three times, with the updates we made as we made them.</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>data =
+
+    1   10
+    2   11
+    3   10
+    4    9
+    5    8
+
+data =
+
+    0   10
+    1   11
+    2   10
+    3    9
+    4    8
+
+data =
+
+      0   1000
+      1   1100
+      2   1000
+      3    900
+      4    800
+
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -16177,26 +16402,51 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
 <p>One of the major advantages of MATLAB/Octave as a language is its built-in data visualization (plotting) capability. Let's imagine that we wanted to plot "f" vs. time for the fictitious data above. We could do this using the functionality in the following cell. Note that the Jupyter notebook (this document) "stores" the values of our variables from cell to cell, so we can access "data" in the cell below to plot it. more information about plotting and line styles is available <a href="https://www.tutorialspoint.com/matlab/matlab_plotting.htm">here</a>.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">first</span><span class="p">,</span> <span class="n">let</span><span class="s1">&#39;s &quot;pull out&quot; time and &quot;f&quot; from our data matrix, so that each is a simple, nx1 (n rows by 1 column) array.</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> <span class="o">%</span> <span class="n">we</span> <span class="n">don</span><span class="s1">&#39;t need to see it, do we? If you want to look at it, remove the semicolon.</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span> 
-<span class="o">%</span><span class="k">now</span> use the &quot;figure&quot; and plot&quot; commands to create a new figure, and then plot x (time) vs. y (f) on a set of axes.
-<span class="n">figure</span> <span class="o">%</span><span class="k">just</span> call this to create a new figure
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">&#39;k-x&#39;</span><span class="p">)</span> <span class="o">%</span><span class="k">this</span> command tells Octave to plot f vs. t in black with x at each data point and a line connecting them (color codes available at the link above)
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="n">a</span> <span class="n">proper</span> <span class="n">plot</span> <span class="n">has</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">y</span> <span class="n">axes</span> <span class="n">labeled</span><span class="err">!</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f (units)&#39;</span><span class="p">)</span>
-<span class="n">axis</span><span class="p">([</span><span class="mi">0</span> <span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="mi">0</span> <span class="nb">max</span><span class="p">(</span><span class="n">f</span><span class="p">)])</span> <span class="o">%</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">optional</span><span class="p">,</span> <span class="n">but</span> <span class="n">allows</span> <span class="n">us</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">scale</span> <span class="n">of</span> <span class="n">the</span> <span class="n">plot</span><span class="o">.</span> <span class="n">Format</span> <span class="ow">is</span> <span class="n">axes</span><span class="p">([</span> <span class="n">min_x</span> <span class="n">max_x</span> <span class="n">min_y</span> <span class="n">max_y</span><span class="p">])</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% first, let&#39;s &quot;pull out&quot; time and &quot;f&quot; from our data matrix, so that each is a simple, nx1 (n rows by 1 column) array.</span>
+<span class="n">t</span> <span class="p">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> <span class="c">% we don&#39;t need to see it, do we? If you want to look at it, remove the semicolon.</span>
+<span class="n">f</span> <span class="p">=</span> <span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span> 
+<span class="c">%now use the &quot;figure&quot; and plot&quot; commands to create a new figure, and then plot x (time) vs. y (f) on a set of axes.</span>
+<span class="nb">figure</span> <span class="c">%just call this to create a new figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s">&#39;k-x&#39;</span><span class="p">)</span> <span class="c">%this command tells Octave to plot f vs. t in black with x at each data point and a line connecting them (color codes available at the link above)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">)</span> <span class="c">% a proper plot has x and y axes labeled!</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;f (units)&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span> <span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="mi">0</span> <span class="nb">max</span><span class="p">(</span><span class="n">f</span><span class="p">)])</span> <span class="c">% this is optional, but allows us to set the scale of the plot. Format is axes([ min_x max_x min_y max_y])</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -16205,31 +16455,56 @@ $$\dot{T}_k = K\Omega_{12}$$<p>Where "1" and "2" represent the two "ends" of eac
 <p>Because we often want to make <em>comparisons</em> between predictions and data in MATLAB/Octave, we often need to plot more than one thing on one figure. This is shown below.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">consider</span> <span class="n">that</span><span class="p">,</span> <span class="ow">in</span> <span class="n">addition</span> <span class="n">to</span> <span class="n">plotting</span> <span class="s2">&quot;f&quot;</span> <span class="n">above</span><span class="p">,</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">plot</span> <span class="s2">&quot;g,&quot;</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">second</span> <span class="n">array</span> <span class="n">of</span> <span class="n">values</span> <span class="n">we</span> <span class="n">create</span> <span class="n">using</span> <span class="n">an</span> <span class="n">EQUATION</span>
-<span class="o">%</span> <span class="n">that</span> <span class="n">represents</span> <span class="n">g</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span> <span class="n">We</span> <span class="n">will</span> <span class="n">use</span> <span class="n">MATLAB</span> <span class="n">to</span> <span class="n">implement</span> <span class="n">this</span> <span class="n">function</span> <span class="ow">and</span> <span class="n">plot</span> <span class="n">its</span> <span class="n">results</span> <span class="n">on</span> <span class="n">top</span> <span class="n">of</span> <span class="s2">&quot;f&quot;</span>
-<span class="o">%</span> <span class="n">recall</span> <span class="n">that</span> <span class="s1">&#39;data&#39;</span> <span class="ow">and</span> <span class="s1">&#39;t&#39;</span> <span class="n">should</span> <span class="n">still</span> <span class="n">be</span> <span class="n">defined</span> <span class="kn">from</span> <span class="nn">when</span> <span class="n">we</span> <span class="n">executed</span> <span class="n">the</span> <span class="n">cells</span> <span class="n">above</span><span class="o">.</span> <span class="n">If</span> <span class="n">they</span> <span class="n">are</span> <span class="ow">not</span><span class="p">,</span> <span class="n">we</span> <span class="n">will</span> <span class="n">see</span> <span class="n">a</span> <span class="n">descriptive</span> <span class="n">error</span> <span class="n">message</span><span class="o">.</span> 
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% consider that, in addition to plotting &quot;f&quot; above, we want to plot &quot;g,&quot; which is a second array of values we create using an EQUATION</span>
+<span class="c">% that represents g(t). We will use MATLAB to implement this function and plot its results on top of &quot;f&quot;</span>
+<span class="c">% recall that &#39;data&#39; and &#39;t&#39; should still be defined from when we executed the cells above. If they are not, we will see a descriptive error message. </span>
 
-<span class="o">%</span> <span class="n">let</span><span class="s1">&#39;s define &#39;</span><span class="n">g</span><span class="s1">&#39; as our function of time. note that element-wise multiplication and power operations (raising each element to a power, for instance) require a period before the operator symbol.</span>
-<span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.005</span><span class="o">.*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">;</span> <span class="o">%</span> <span class="n">also</span> <span class="n">note</span> <span class="n">the</span> <span class="n">parentheses</span> <span class="n">here</span> <span class="n">to</span> <span class="n">make</span> <span class="n">the</span> <span class="n">order</span> <span class="n">of</span> <span class="n">operations</span> <span class="n">very</span> <span class="n">explicit</span><span class="o">.</span> 
+<span class="c">% let&#39;s define &#39;g&#39; as our function of time. note that element-wise multiplication and power operations (raising each element to a power, for instance) require a period before the operator symbol.</span>
+<span class="n">g</span> <span class="p">=</span> <span class="o">-</span><span class="mi">1000</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.005</span><span class="o">.*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">;</span> <span class="c">% also note the parentheses here to make the order of operations very explicit. </span>
 
-<span class="o">%</span><span class="k">now</span> plot g and f both versus time.
-<span class="n">figure</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;k-x&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">note</span> the new command here, which produces a LEGEND telling us which color is which thing.
-<span class="n">legend</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="c">%now plot g and f both versus time.</span>
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">data</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;k-x&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;output&#39;</span><span class="p">)</span>
+<span class="c">%note the new command here, which produces a LEGEND telling us which color is which thing.</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
