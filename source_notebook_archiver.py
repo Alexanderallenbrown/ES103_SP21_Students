@@ -48,11 +48,27 @@ def main():
             if file.endswith(".ipynb") and not "checkpoint" in file :
                 # print(rel_dir,file)
                 dst = os.path.join(docdir,rel_dir)
-                convertcmdpre = "jupyter nbconvert "+" --to html --output-dir "+dst+" "+os.path.join(rel_dir,file)
+                convertcmdpre = "jupyter nbconvert "+"--execute --to html --output-dir "+dst+" "+os.path.join(rel_dir,file)
                 #convertcmdpre = "jupyter nbconvert  "+dst+"/*.ipynb"+" --to webpdf --output-dir "+dst
 
                 #print (convertcmdpre)
                 os.system(convertcmdpre)
+
+                #modify links inside thie html file
+                # Read in the file
+                htmlfilename = os.path.join(dst,file[0:-5]+'html')
+                print("HTML FILE: "+htmlfilename)
+                with open(htmlfilename, 'r') as htmlfile :
+                  filedata = htmlfile.read()
+                htmlfile.close()
+
+                # Replace the target string
+                filedata = filedata.replace('ipynb', 'html')
+
+                with open(htmlfilename, 'w') as htmlfile :
+                    htmlfile.write(filedata)
+                htmlfile.close()
+
                 link = "<a href="+str(os.path.join(rel_dir,file[0:-5]+"html"))+">"+file[0:-6]+"</a>"
                 findex.write("<p>\r\n")
                 findex.write(link+"\r\n")
