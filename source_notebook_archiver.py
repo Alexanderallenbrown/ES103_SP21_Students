@@ -10,17 +10,26 @@ import stat
 
 import nbformat as nbf
 
+from datetime import datetime
+
+now = datetime.now()
+date_time = now.strftime("%m/%d/%y %H:%M:%S")
+
 findex = open('./docs/index.html','w')
 
 opener = """
 <!DOCTYPE html>
 <html>
 <head></head>
-<body><p>ES103 Spring 2021 Materials</p>
-
+<body><h1 style="text-align: center">ES103 Spring 2021 Released Materials</h1>
+<p style="text-align: center"> Last Updated:    """+str(date_time)+"""</p>
+<div style="border: solid 2px black; border-radius: 10px; text-align: center; width: 50vw;margin-left: auto; margin-right: auto">
+<br><br>
 """
 
 closer = """
+<br><br>
+</div>
 </body>
 </html>
 """
